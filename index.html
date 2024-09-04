@@ -162,15 +162,29 @@
             </div>
         </section>
                 
-        <section id="certification">
-            <h2>Certifications</h2>
-            <div class="certificates">
-                <img src="certificate1.jpg" alt="Certificate 1" class="cert-image">
-                <img src="certificate2.jpg" alt="Certificate 2" class="cert-image">
-                <!-- Add more certificates as needed -->
-            </div>
-        </section>
-
+        
+    <section>
+    <div class="certificates">
+    <div class="cert-card">
+        <img src="certificate1.jpg" alt="Certificate 1" class="cert-image" onclick="toggleEnlarge(this)">
+        <ul>
+            <li><a href="certificate1-link.pdf" target="_blank">Certificate 1 Title</a></li>
+            <li>Date: January 2023</li>
+            <li>Issued by: Organization Name</li>
+        </ul>
+    </div>
+    <div class="cert-card">
+        <img src="certificate2.jpg" alt="Certificate 2" class="cert-image" onclick="toggleEnlarge(this)">
+        <ul>
+            <li><a href="certificate2-link.pdf" target="_blank">Certificate 2 Title</a></li>
+            <li>Date: February 2023</li>
+            <li>Issued by: Organization Name</li>
+        </ul>
+    </div>
+    <!-- Add more cert-card divs as needed -->
+</div>
+    </section>
+        
         <section id="experience">
             <h2>Professional Experience</h2>
             <div class="experience-cards">
