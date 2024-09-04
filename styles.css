@@ -407,15 +407,30 @@ section {
 }
 
 
-
 .certificates {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
 }
 
+.cert-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.cert-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 .cert-image {
-    max-width: 200px;
+    max-width: 100%;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -424,7 +439,8 @@ section {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-.certificates img.enlarged {
+
+.cert-image.enlarged {
     transform: scale(1.5);
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
 }
@@ -432,6 +448,8 @@ section {
 ul {
     padding: 0;
     list-style-type: none;
+    margin-top: 15px;
+    text-align: left;
 }
 
 ul li {
@@ -449,15 +467,20 @@ ul li a:hover {
 }
 
 @media (max-width: 768px) {
-    .skills-carousel {
+    .certificates {
         flex-direction: column;
         align-items: center;
+    }
+
+    .cert-card {
+        max-width: 100%;
     }
 
     .skills-carousel img {
         margin-bottom: 10px;
     }
 }
+
 /* Section styling */
 
 /*Experience*/
