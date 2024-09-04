@@ -1,0 +1,714 @@
+/* Global Styles */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* Header Styling */
+header {
+    background-color: #003366; /* Dark blue background */
+    color: #ffffff; /* White text color */
+    padding: 10px 20px; /* Padding around the header */
+    display: flex;
+    justify-content: space-between; /* Space between elements */
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures the header stays on top */
+}
+
+/* Header content container */
+.header-content {
+    width: 100%;
+    max-width: 1200px; /* Maximum width for content */
+    margin: 0 auto; /* Center-align content horizontally */
+    display: flex;
+    justify-content: space-between; /* Space between title, nav, and button */
+    align-items: center;
+}
+
+/* Main heading in header */
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Navigation menu styling */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Download button styling */
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Button background color */
+    color: #ffffff; /* Button text color */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 20px; /* Space between menu and button */
+}
+
+.download-button:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+}
+
+/* Dropdown Menu */
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #003366;
+    list-style: none;
+    padding: 0;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown li a {
+    padding: 10px 20px;
+}
+
+/* Main Content Styling */
+main {
+    margin-top: 70px; /* Adjust for fixed header height */
+    padding: 20px;
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* About Section Styling */
+/* About Section Styling */
+/* About Section Styling */
+#about {
+    background: linear-gradient(135deg, rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.6)), url('background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff; /* Ensure text is readable on dark background */
+    text-align: center; /* Center-align section heading */
+}
+
+#about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 0; /* Behind content */
+}
+
+/* Profile Container */
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent card */
+    border-radius: 15px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    position: relative;
+    z-index: 1; /* Above the overlay */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: translateY(20px); /* Initial position */
+    opacity: 0; /* Start hidden */
+}
+
+/* Profile Picture */
+.profile-picture {
+    flex: 1;
+    max-width: 300px; /* Restrict image size */
+    margin-right: 20px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out; /* Enhanced fade-in animation */
+}
+
+.profile-picture img {
+    width: 100%;
+    border-radius: 50%; /* Circular profile picture */
+    border: 5px solid #003366; /* Border around the picture */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow for picture */
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-picture img:hover {
+    transform: rotate(15deg); /* Slight rotation on hover */
+}
+
+/* Profile Info */
+.profile-info {
+    flex: 2;
+    animation: fadeInRight 2s ease-in-out; /* Animation for profile info */
+    text-align: justify; /* Justify text in the profile info */
+    text-align-last: center; /* Center-align the last line for a neat appearance */
+}
+
+.profile-info h1 {
+    font-size: 2.8rem;
+    color: #003366; /* Dark blue text */
+    margin-bottom: 20px;
+    animation: fadeInRight 2s ease-in-out; /* Fade-in animation */
+}
+
+.profile-info p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333; /* Dark text for contrast */
+    margin-bottom: 20px;
+    text-align: justify; /* Justify text in paragraphs */
+    animation: slideUp 2s ease-in-out; /* Slide-up animation */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Show profile-container when loaded */
+.profile-container {
+    animation: fadeInUp 1s ease-in-out 0.5s forwards; /* Delay to stagger effect */
+}
+
+
+/* Skills Section */
+/* Skills Section */
+#skills {
+    background-color: #f9f9f9; /* Light background for contrast */
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+#skills h2 {
+    font-size: 24px;
+    color: #003366;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.expertise-content {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+    text-align: left;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.expertise-content p {
+    margin: 0;
+    column-count: 2;
+    column-gap: 20px;
+}
+
+.skills-carousel {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px 0;
+    gap: 20px;
+}
+
+.skills-carousel img {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.skills-carousel img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.skills-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.skills-list ul {
+    list-style-type: disc; /* Bullet point */
+    margin: 0;
+    padding-left: 20px; /* Adjust spacing for bullet points */
+    flex: 1; /* Allows the list to flexibly take up space */
+}
+
+.skills-list ul li {
+    margin-bottom: 5px; /* Space between items */
+}
+
+
+#skills {
+    background-color: #f4f4f4; /* Light background color for contrast */
+    padding: 20px; /* Add padding around the section */
+    text-align: center; /* Center-align text */
+    overflow: hidden; /* Hide overflow to ensure smooth scrolling */
+}
+
+.skills-carousel {
+    display: flex; /* Use flexbox for horizontal alignment */
+    overflow: hidden; /* Hide overflow to ensure smooth scrolling */
+    white-space: nowrap; /* Prevent line breaks in the carousel */
+    animation: scroll-left 30s linear infinite; /* Animation for continuous scrolling */
+}
+
+.skills-carousel img {
+    height: 60px; /* Set a fixed height for logos */
+    margin: 0 15px; /* Space between logos */
+    vertical-align: middle; /* Align logos vertically */
+}
+
+/* Animation for horizontal scrolling */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#projects {
+    background-color: #f4f4f4;
+    padding: 40px;
+    text-align: center;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* Three equal-width columns */
+    gap: 30px; /* Space between items */
+    justify-content: center;
+    max-width: 1200px; /* Limits the total width of the grid */
+    margin: 0 auto; /* Centers the grid container */
+}
+
+.project-thumbnail {
+    width: 100%; /* Ensures the grid item fills its cell */
+    max-width: 350px; /* Limits the card width */
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    background-color: #fff; /* Card background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 15px; /* Padding inside the card */
+    margin: 0 auto; /* Centers the card within the grid item */
+}
+
+.project-thumbnail img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px; /* Slight rounding of image corners */
+}
+
+.project-thumbnail h3 {
+    margin: 15px 0;
+    font-size: 18px;
+    color: #333; /* Darker text color */
+    font-weight: bold;
+}
+
+.project-thumbnail:hover {
+    transform: scale(1.05); /* Slight scaling on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.project-details {
+    display: none;
+    padding: 15px;
+    background-color: #ffffff;
+    text-align: left;
+    border-top: 1px solid #ddd;
+}
+
+.project-details p {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #666; /* Subtle text color */
+}
+
+.project-details a {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.project-details a:hover {
+    background-color: #0056b3;
+}
+
+
+
+.certificates {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cert-image {
+    max-width: 200px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.certificates img.enlarged {
+    transform: scale(1.5);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .skills-carousel {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-carousel img {
+        margin-bottom: 10px;
+    }
+}
+/* Section styling */
+
+/*Experience*/
+#experience {
+    margin: 20px 0;
+}
+
+.experience-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 300px; /* Adjust the max width as needed */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #003366;
+}
+
+.card-header span {
+    display: block;
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.card-body a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.card-body a:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+}
+
+
+
+/* Virtual Experience Programs Section Styling */
+#virtual-programs {
+    background-color: #f8f9fa; /* Light background color */
+    color: #333; /* Dark text color for readability */
+    padding: 40px 20px; /* Padding around the section */
+    text-align: center; /* Center-align text */
+}
+
+#virtual-programs h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #003366; /* Dark blue color for the heading */
+}
+
+.program-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Spacing between program blocks */
+}
+
+.program {
+    background-color: #ffffff; /* White background for each program block */
+    border: 1px solid #dddddd; /* Light border for visual separation */
+    border-radius: 8px; /* Rounded corners for a softer look */
+    padding: 20px; /* Padding inside each program block */
+    width: 100%;
+    max-width: 800px; /* Maximum width for each program block */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+}
+
+.program:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.program h3 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #003366; /* Dark blue color for the subheadings */
+}
+
+.program p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .program-list {
+        flex-direction: column;
+    }
+
+    .program {
+        width: 90%; /* Responsive width for smaller screens */
+    }
+}
+
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contact Section Styling */
+#contact {
+    background-color: #f1f3f5; /* Dark blue background for the section */
+    color: #ffffff; /* White text color */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Container for the contact information */
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px; /* Padding inside the container */
+    background-color: rgba(87, 128, 176, 0.9); /* Darker semi-transparent background for better contrast */
+    border-radius: 15px; /* Rounded corners for the card */
+    box-shadow: 0 12px 24px rgba(19, 27, 117, 0.3); /* Enhanced shadow for a floating effect */
+    position: relative; /* Ensure correct stacking context */
+    overflow: hidden; /* Ensure contents stay within rounded corners */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.contact-container:hover {
+    transform: translateY(-10px); /* Lift the card on hover */
+}
+
+/* Header styling */
+.contact-container h2 {
+    font-size: 2.5rem; /* Larger font size for visibility */
+    margin-bottom: 20px;
+    color: #e0e5ec; /* Ensure header text is white for contrast */
+    animation: fadeInUp 1s ease-in-out; /* Animation for header */
+}
+
+/* Contact info styling */
+.contact-info {
+    margin-top: 20px; /* Add margin to separate content from the header */
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #dce4ea; /* Ensure text is white for contrast */
+    animation: fadeInUp 1s ease-in-out; /* Animation for contact info */
+}
+
+.contact-info a {
+    color: #00bfff; /* Light blue for links */
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+    color: #87ceeb; /* Slightly lighter blue on hover */
+}
+
+/* Ensure proper spacing and appearance */
+.contact-link {
+    color: #00bfff; /* Light blue for links */
+    text-decoration: none;
+    font-weight: bold; /* Make the links bold */
+    margin: 0 10px; /* Space between links */
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+    color: #87ceeb; /* Slightly lighter blue on hover */
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* Footer styling */
+footer {
+    background-color: #003366; /* Dark blue background */
+    color: #ffffff; /* White text color */
+    padding: 20px 0; /* Top and bottom padding */
+    text-align: center; /* Center-align text */
+    position: relative; /* Ensure footer is positioned at the bottom */
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-content {
+    max-width: 1200px; /* Maximum width of the footer content */
+    margin: 0 auto; /* Center-align the content */
+}
+
+footer p {
+    margin: 0; /* Remove default margin */
+    font-size: 14px; /* Font size for the text */
+    font-family: 'Arial', sans-serif; /* Font family */
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 15px 0; /* Adjust padding for smaller screens */
+    }
+
+    footer p {
+        font-size: 12px; /* Smaller font size for smaller screens */
+    }
+}
+
+
+
