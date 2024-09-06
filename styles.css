@@ -112,15 +112,26 @@ section {
 /* About Section Styling */
 /* About Section Styling */
 /* About Section Styling */
-#about {
+/* About and Profile Wrapper */
+#about-profile-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 100px 20px;
     background: linear-gradient(135deg, rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.6)), url('background-image.jpg') no-repeat center center fixed;
     background-size: cover;
-    padding: 100px 20px;
-    color: #ffffff;
-    text-align: center;
-    animation: fadeInUp 2s ease-in-out;
+    min-height: 100vh;
+    gap: 50px;
     opacity: 0;
+    animation: fadeInBoth 2s ease-in-out;
     animation-fill-mode: forwards;
+}
+
+/* About Section Styling */
+#about {
+    color: #ffffff;
+    max-width: 600px;
+    animation: fadeInUp 2.5s ease-in-out;
 }
 
 #about h1 {
@@ -136,35 +147,32 @@ section {
 
 /* Profile Picture Section Styling */
 #profile-picture-section {
-    padding: 50px 20px;
     text-align: center;
-    background-color: #f4f4f4;
     position: relative;
     z-index: 1;
-    opacity: 0;
-    animation: fadeInLeft 2s ease-in-out 0.5s;
-    animation-fill-mode: forwards;
+    animation: fadeInLeft 3s ease-in-out;
 }
 
 .profile-picture img {
-    width: 200px;
-    height: 200px;
-    border-radius: 0;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #ddd;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    border: 3px solid #ddd;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .profile-picture img:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
 }
 
 /* Animations */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(100px);
     }
     100% {
         opacity: 1;
@@ -175,11 +183,38 @@ section {
 @keyframes fadeInLeft {
     0% {
         opacity: 0;
-        transform: translateX(-50px);
+        transform: translateX(-100px);
     }
     100% {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@keyframes fadeInBoth {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #about-profile-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .profile-picture img {
+        width: 200px;
+        height: 200px;
     }
 }
 
