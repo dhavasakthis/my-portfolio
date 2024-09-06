@@ -114,25 +114,10 @@ section {
 /* About Section Styling */
 /* About and Profile Wrapper */
 /* About and Profile Wrapper */
-#about-profile-wrapper {
-    display: flex;
-    justify-content: space-between; /* Increases space between the two sections */
-    align-items: center;
-    padding: 100px 50px; /* Adds more padding */
-    background: linear-gradient(135deg, rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.6)), url('background-image.jpg') no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh;
-    opacity: 0;
-    animation: fadeInBoth 2s ease-in-out;
-    animation-fill-mode: forwards;
-    gap: 100px; /* Adds space between profile and about */
-}
-
-/* About Section Styling */
 /* About and Profile Wrapper */
 #about-profile-wrapper {
     display: flex;
-    justify-content: space-around; /* Distributes space more evenly between the sections */
+    justify-content: space-around; /* Ensures space between sections */
     align-items: center;
     padding: 100px 50px;
     background: linear-gradient(135deg, rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.6)), url('background-image.jpg') no-repeat center center fixed;
@@ -143,17 +128,18 @@ section {
     animation-fill-mode: forwards;
 }
 
-/* Profile Section Styling */
+/* Profile Section on the Left */
 #profile-picture-section {
+    order: 1; /* Places the profile section first (on the left) */
     flex: 1;
     text-align: center;
     position: relative;
     z-index: 1;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7); /* Adds a distinct background */
+    background-color: rgba(0, 0, 0, 0.7); /* Distinct background */
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    animation: fadeInRight 2.5s ease-in-out;
+    animation: fadeInLeft 2.5s ease-in-out; /* Profile section now fades in from left */
 }
 
 .profile-picture img {
@@ -171,17 +157,18 @@ section {
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
 }
 
-/* About Section Styling */
+/* About Section on the Right */
 #about {
+    order: 2; /* Places the About section second (on the right) */
     flex: 2;
     color: #ffffff;
     max-width: 600px;
     margin-left: 50px; /* Ensures separation from profile */
-    background-color: rgba(0, 0, 0, 0.8); /* More noticeable background */
+    background-color: rgba(0, 0, 0, 0.8); /* Distinct background */
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-    animation: fadeInLeft 2s ease-in-out;
+    animation: fadeInRight 2s ease-in-out; /* About section now fades in from right */
 }
 
 #about h1 {
