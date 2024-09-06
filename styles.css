@@ -161,12 +161,14 @@ section {
 }
 
 .profile-picture img {
-    width: 100%;
-    border-radius: 50%; /* Circular profile picture */
-    border: 5px solid #003366; /* Border around the picture */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow for picture */
-    transition: transform 0.3s ease-in-out;
+    width: 150px; /* Adjust the size as needed */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 0; /* Removes any rounded corners */
+    object-fit: cover; /* Ensures the image fits well */
+    border: 2px solid #ddd; /* Optional: add a border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add a shadow for depth */
 }
+
 
 .profile-picture img:hover {
     transform: rotate(15deg); /* Slight rotation on hover */
