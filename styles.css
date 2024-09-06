@@ -129,37 +129,31 @@ section {
 }
 
 /* About Section Styling */
-#about {
-    color: #ffffff;
-    max-width: 600px;
-    background-color: rgba(0, 0, 0, 0.6); /* Background box to highlight About section */
-    padding: 30px;
-    border-radius: 15px; /* Rounded corners for About section */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 2.5s ease-in-out;
+/* About and Profile Wrapper */
+#about-profile-wrapper {
+    display: flex;
+    justify-content: space-around; /* Distributes space more evenly between the sections */
+    align-items: center;
+    padding: 100px 50px;
+    background: linear-gradient(135deg, rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.6)), url('background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    opacity: 0;
+    animation: fadeInBoth 2s ease-in-out;
+    animation-fill-mode: forwards;
 }
 
-#about h1 {
-    font-size: 3rem;
-    color: #ffffff;
-    margin-bottom: 20px;
-}
-
-#about p {
-    font-size: 1.5rem;
-    line-height: 1.8;
-}
-
-/* Profile Picture Section Styling */
+/* Profile Section Styling */
 #profile-picture-section {
+    flex: 1;
     text-align: center;
     position: relative;
     z-index: 1;
-    animation: fadeInRight 3s ease-in-out;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6); /* Adds background to the profile section */
+    background-color: rgba(0, 0, 0, 0.7); /* Adds a distinct background */
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Shadow effect for the profile */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    animation: fadeInRight 2.5s ease-in-out;
 }
 
 .profile-picture img {
@@ -167,32 +161,56 @@ section {
     height: 250px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #ffffff; /* White border around profile picture */
+    border: 5px solid #ffffff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
 .profile-picture img:hover {
-    transform: scale(1.2); /* Increase hover effect */
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    transform: scale(1.15);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* About Section Styling */
+#about {
+    flex: 2;
+    color: #ffffff;
+    max-width: 600px;
+    margin-left: 50px; /* Ensures separation from profile */
+    background-color: rgba(0, 0, 0, 0.8); /* More noticeable background */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    animation: fadeInLeft 2s ease-in-out;
+}
+
+#about h1 {
+    font-size: 3.5rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+#about p {
+    font-size: 1.6rem;
+    line-height: 2;
 }
 
 /* Animations */
-@keyframes fadeInUp {
+@keyframes fadeInLeft {
     0% {
         opacity: 0;
-        transform: translateY(100px);
+        transform: translateX(-100px); /* Slide in from left */
     }
     100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
 
 @keyframes fadeInRight {
     0% {
         opacity: 0;
-        transform: translateX(100px); /* Comes from the right */
+        transform: translateX(100px); /* Slide in from right */
     }
     100% {
         opacity: 1;
@@ -214,12 +232,13 @@ section {
     #about-profile-wrapper {
         flex-direction: column;
         text-align: center;
-        gap: 30px; /* Reduces gap on smaller screens */
+        padding: 50px;
     }
 
     #about {
-        max-width: 100%;
+        margin-left: 0;
         padding: 20px;
+        max-width: 100%;
     }
 
     .profile-picture img {
