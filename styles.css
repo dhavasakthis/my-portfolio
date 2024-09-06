@@ -2,7 +2,7 @@
 body {
     background-color: #f4f4f4;
     color: #333;
-    font-family: 'Calibri', sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
@@ -111,127 +111,115 @@ section {
 /* About Section Styling */
 /* About Section Styling */
 /* About Section Styling */
-/* About Section Styling */
-/* About and Profile Wrapper */
-/* About and Profile Wrapper */
-/* About and Profile Wrapper */
-#about-profile-wrapper {
-    display: flex;
-    justify-content: space-around; /* Ensures space between sections */
-    align-items: center;
-    padding: 100px 50px;
+#about {
     background: linear-gradient(135deg, rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.6)), url('background-image.jpg') no-repeat center center fixed;
     background-size: cover;
-    min-height: 100vh;
-    opacity: 0;
-    animation: fadeInBoth 2s ease-in-out;
-    animation-fill-mode: forwards;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff; /* Ensure text is readable on dark background */
+    text-align: center; /* Center-align section heading */
 }
 
-/* Profile Section on the Left */
-#profile-picture-section {
-    order: 1; /* Places the profile section first (on the left) */
-    flex: 1;
-    text-align: center;
-    position: relative;
-    z-index: 1;
+#about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 0; /* Behind content */
+}
+
+/* Profile Container */
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7); /* Distinct background */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent card */
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    animation: fadeInLeft 2.5s ease-in-out; /* Profile section now fades in from left */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    position: relative;
+    z-index: 1; /* Above the overlay */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: translateY(20px); /* Initial position */
+    opacity: 0; /* Start hidden */
+}
+
+/* Profile Picture */
+.profile-picture {
+    flex: 1;
+    max-width: 300px; /* Restrict image size */
+    margin-right: 20px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out; /* Enhanced fade-in animation */
 }
 
 .profile-picture img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #ffffff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    width: 100%;
+    border-radius: 50%; /* Circular profile picture */
+    border: 5px solid #003366; /* Border around the picture */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow for picture */
+    transition: transform 0.3s ease-in-out;
 }
 
 .profile-picture img:hover {
-    transform: scale(1.15);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+    transform: rotate(15deg); /* Slight rotation on hover */
 }
 
-/* About Section on the Right */
-#about {
-    order: 2; /* Places the About section second (on the right) */
+/* Profile Info */
+.profile-info {
     flex: 2;
-    color: #ffffff;
-    max-width: 600px;
-    margin-left: 50px; /* Ensures separation from profile */
-    background-color: rgba(0, 0, 0, 0.8); /* Distinct background */
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-    animation: fadeInRight 2s ease-in-out; /* About section now fades in from right */
+    animation: fadeInRight 2s ease-in-out; /* Animation for profile info */
+    text-align: justify; /* Justify text in the profile info */
+    text-align-last: center; /* Center-align the last line for a neat appearance */
 }
 
-#about h1 {
-    font-size: 3.5rem;
-    color: #ffffff;
-    margin-bottom: 30px;
+.profile-info h1 {
+    font-size: 2.8rem;
+    color: #003366; /* Dark blue text */
+    margin-bottom: 20px;
+    animation: fadeInRight 2s ease-in-out; /* Fade-in animation */
 }
 
-#about p {
-    font-size: 1.6rem;
-    line-height: 2;
+.profile-info p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333; /* Dark text for contrast */
+    margin-bottom: 20px;
+    text-align: justify; /* Justify text in paragraphs */
+    animation: slideUp 2s ease-in-out; /* Slide-up animation */
 }
 
 /* Animations */
-@keyframes fadeInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-100px); /* Slide in from left */
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(100px); /* Slide in from right */
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes fadeInBoth {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    #about-profile-wrapper {
-        flex-direction: column;
-        text-align: center;
-        padding: 50px;
-    }
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-    #about {
-        margin-left: 0;
-        padding: 20px;
-        max-width: 100%;
-    }
-
-    .profile-picture img {
-        width: 200px;
-        height: 200px;
-    }
+/* Show profile-container when loaded */
+.profile-container {
+    animation: fadeInUp 1s ease-in-out 0.5s forwards; /* Delay to stagger effect */
 }
 
 
@@ -419,30 +407,15 @@ section {
 }
 
 
+
 .certificates {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
 }
 
-.cert-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    max-width: 250px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-}
-
-.cert-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
 .cert-image {
-    max-width: 100%;
+    max-width: 200px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -451,8 +424,7 @@ section {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-
-.cert-image.enlarged {
+.certificates img.enlarged {
     transform: scale(1.5);
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
 }
@@ -460,8 +432,6 @@ section {
 ul {
     padding: 0;
     list-style-type: none;
-    margin-top: 15px;
-    text-align: left;
 }
 
 ul li {
@@ -479,20 +449,15 @@ ul li a:hover {
 }
 
 @media (max-width: 768px) {
-    .certificates {
+    .skills-carousel {
         flex-direction: column;
         align-items: center;
-    }
-
-    .cert-card {
-        max-width: 100%;
     }
 
     .skills-carousel img {
         margin-bottom: 10px;
     }
 }
-
 /* Section styling */
 
 /*Experience*/
@@ -732,7 +697,7 @@ footer {
 footer p {
     margin: 0; /* Remove default margin */
     font-size: 14px; /* Font size for the text */
-   font-family: 'Calibri', sans-serif; /* Font family */
+    font-family: 'Arial', sans-serif; /* Font family */
 }
 
 @media (max-width: 768px) {
