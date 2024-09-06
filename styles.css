@@ -2,7 +2,7 @@
 body {
     background-color: #f4f4f4;
     color: #333;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Calibri', sans-serif;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
@@ -720,7 +720,7 @@ footer {
 footer p {
     margin: 0; /* Remove default margin */
     font-size: 14px; /* Font size for the text */
-    font-family: 'Arial', sans-serif; /* Font family */
+   font-family: 'Calibri', sans-serif; /* Font family */
 }
 
 @media (max-width: 768px) {
