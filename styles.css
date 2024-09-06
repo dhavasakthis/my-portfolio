@@ -113,24 +113,29 @@ section {
 /* About Section Styling */
 /* About Section Styling */
 /* About and Profile Wrapper */
+/* About and Profile Wrapper */
 #about-profile-wrapper {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; /* Increases space between the two sections */
     align-items: center;
-    padding: 100px 20px;
+    padding: 100px 50px; /* Adds more padding */
     background: linear-gradient(135deg, rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.6)), url('background-image.jpg') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
-    gap: 50px;
     opacity: 0;
     animation: fadeInBoth 2s ease-in-out;
     animation-fill-mode: forwards;
+    gap: 100px; /* Adds space between profile and about */
 }
 
 /* About Section Styling */
 #about {
     color: #ffffff;
     max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.6); /* Background box to highlight About section */
+    padding: 30px;
+    border-radius: 15px; /* Rounded corners for About section */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     animation: fadeInUp 2.5s ease-in-out;
 }
 
@@ -150,7 +155,11 @@ section {
     text-align: center;
     position: relative;
     z-index: 1;
-    animation: fadeInLeft 3s ease-in-out;
+    animation: fadeInRight 3s ease-in-out;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Adds background to the profile section */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Shadow effect for the profile */
 }
 
 .profile-picture img {
@@ -158,14 +167,14 @@ section {
     height: 250px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #ddd;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border: 5px solid #ffffff; /* White border around profile picture */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .profile-picture img:hover {
-    transform: scale(1.15);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+    transform: scale(1.2); /* Increase hover effect */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
 }
 
 /* Animations */
@@ -180,10 +189,10 @@ section {
     }
 }
 
-@keyframes fadeInLeft {
+@keyframes fadeInRight {
     0% {
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateX(100px); /* Comes from the right */
     }
     100% {
         opacity: 1;
@@ -205,6 +214,7 @@ section {
     #about-profile-wrapper {
         flex-direction: column;
         text-align: center;
+        gap: 30px; /* Reduces gap on smaller screens */
     }
 
     #about {
