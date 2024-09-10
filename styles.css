@@ -553,76 +553,76 @@ ul li a:hover {
     text-align: center; /* Center-align text */
 }
 
+/* Virtual Programs Section */
+/* Virtual Programs Section */
+#virtual-programs {
+    padding: 60px 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+}
+
 #virtual-programs h2 {
     font-size: 28px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    text-align: center;
     color: #003366; /* Dark blue color for the heading */
 }
 
 .program-list {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px; /* Spacing between program blocks */
+    justify-content: center;
+    flex-wrap: wrap; /* Allows the cards to wrap to the next row if there are too many */
+    gap: 30px; /* Adds space between the cards */
 }
 
 .program {
-    background-color: #ffffff; /* White background for each program block */
-    border: 1px solid #dddddd; /* Light border for visual separation */
-    border-radius: 8px; /* Rounded corners for a softer look */
-    padding: 20px; /* Padding inside each program block */
-    width: 100%;
-    max-width: 800px; /* Maximum width for each program block */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+    background-color: #ffffff; /* White background for the card */
+    border: 1px solid #dddddd; /* Light border for separation */
+    border-radius: 12px; /* Rounded corners for a card-like look */
+    padding: 20px; /* Padding inside the card */
+    width: 300px; /* Set a fixed width for the cards */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    text-align: center; /* Center content inside the card */
 }
 
 .program:hover {
-    transform: translateY(-5px); /* Slight lift effect on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
 
 .program h3 {
-    margin-top: 0;
     font-size: 22px;
-    color: #003366; /* Dark blue color for the subheadings */
+    margin-bottom: 15px;
+    color: #003366; /* Dark blue color for the subheading */
 }
 
 .program p {
-    margin: 0;
     font-size: 16px;
     line-height: 1.6;
+    color: #333333; /* Dark text for better readability */
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     .program-list {
-        flex-direction: column;
+        flex-direction: column; /* Stack the cards vertically on small screens */
+        align-items: center;
     }
 
     .program {
-        width: 90%; /* Responsive width for smaller screens */
-    }
-}
-
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+        width: 90%; /* Make the cards responsive for smaller screens */
     }
 }
 
 /* Contact Section Styling */
 #contact {
-    background-color: #f1f3f5; /* Dark blue background for the section */
-    color: #ffffff; /* White text color */
+    background-color: #003366; /* Dark blue background for the section */
+    color: #003366; /* Blue text for contrast with the white card */
     padding: 60px 20px;
     text-align: center;
+    position: relative;
+    z-index: 1; /* Ensure this section is on top */
+    margin-top: 100px; /* Adds space above the contact section */
 }
 
 /* Container for the contact information */
@@ -630,12 +630,13 @@ ul li a:hover {
     max-width: 800px;
     margin: 0 auto;
     padding: 30px; /* Padding inside the container */
-    background-color: rgba(87, 128, 176, 0.9); /* Darker semi-transparent background for better contrast */
+    background-color: #ffffff; /* White background for the card */
     border-radius: 15px; /* Rounded corners for the card */
-    box-shadow: 0 12px 24px rgba(19, 27, 117, 0.3); /* Enhanced shadow for a floating effect */
+    box-shadow: 0 8px 24px rgba(14, 4, 151, 0.1); /* Light shadow for a subtle floating effect */
     position: relative; /* Ensure correct stacking context */
     overflow: hidden; /* Ensure contents stay within rounded corners */
     transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+    z-index: 2; /* Ensure the container is on top */
 }
 
 .contact-container:hover {
@@ -646,7 +647,7 @@ ul li a:hover {
 .contact-container h2 {
     font-size: 2.5rem; /* Larger font size for visibility */
     margin-bottom: 20px;
-    color: #e0e5ec; /* Ensure header text is white for contrast */
+    color: #003366; /* Blue header text to match the background */
     animation: fadeInUp 1s ease-in-out; /* Animation for header */
 }
 
@@ -658,23 +659,23 @@ ul li a:hover {
 .contact-info p {
     font-size: 1.2rem;
     margin: 10px 0;
-    color: #dce4ea; /* Ensure text is white for contrast */
+    color: #003366; /* Blue text to match the background */
     animation: fadeInUp 1s ease-in-out; /* Animation for contact info */
 }
 
 .contact-info a {
-    color: #00bfff; /* Light blue for links */
+    color: #057695; /* Blue for links */
     text-decoration: none;
 }
 
 .contact-info a:hover {
     text-decoration: underline;
-    color: #87ceeb; /* Slightly lighter blue on hover */
+    color: #005599; /* Darker blue on hover */
 }
 
 /* Ensure proper spacing and appearance */
 .contact-link {
-    color: #00bfff; /* Light blue for links */
+    color: #003366; /* Blue for links */
     text-decoration: none;
     font-weight: bold; /* Make the links bold */
     margin: 0 10px; /* Space between links */
@@ -682,7 +683,7 @@ ul li a:hover {
 
 .contact-link:hover {
     text-decoration: underline;
-    color: #87ceeb; /* Slightly lighter blue on hover */
+    color: #005599; /* Darker blue on hover */
 }
 
 /* Animations */
@@ -698,39 +699,6 @@ ul li a:hover {
 }
 
 
-
-
-/* Footer styling */
-footer {
-    background-color: #003366; /* Dark blue background */
-    color: #ffffff; /* White text color */
-    padding: 20px 0; /* Top and bottom padding */
-    text-align: center; /* Center-align text */
-    position: relative; /* Ensure footer is positioned at the bottom */
-    width: 100%;
-    bottom: 0;
-}
-
-.footer-content {
-    max-width: 1200px; /* Maximum width of the footer content */
-    margin: 0 auto; /* Center-align the content */
-}
-
-footer p {
-    margin: 0; /* Remove default margin */
-    font-size: 14px; /* Font size for the text */
-    font-family: 'Calibri', sans-serif; /* Font family */
-}
-
-@media (max-width: 768px) {
-    footer {
-        padding: 15px 0; /* Adjust padding for smaller screens */
-    }
-
-    footer p {
-        font-size: 12px; /* Smaller font size for smaller screens */
-    }
-}
 
 
 
