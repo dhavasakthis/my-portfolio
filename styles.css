@@ -13,7 +13,7 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Header Styling */
+/* Header and Menu Styling (Pure CSS Menu) */
 header {
     background: linear-gradient(90deg, #e6f0fa, #ffffff);
     padding: 1rem 2rem;
@@ -45,17 +45,21 @@ nav ul {
 
 nav ul li {
     margin-left: 1.5rem;
+    position: relative;
 }
 
 nav ul li a {
     color: #005b99;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, background 0.3s ease;
+    border-radius: 5px;
 }
 
 nav ul li a:hover {
-    color: #003366;
+    color: #ffffff;
+    background: #005b99;
 }
 
 .download-button {
@@ -87,7 +91,40 @@ section {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* About Section */
+/* Heading Animation (Simple Text Animation) */
+section h2 {
+    font-size: 2rem;
+    color: #005b99;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+#flip {
+    height: 40px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#flip > div > div {
+    color: #005b99;
+    padding: 0 10px;
+    height: 40px;
+    display: inline-block;
+    font-weight: 700;
+    animation: flip 6s infinite;
+}
+
+@keyframes flip {
+    0% { transform: translateY(0); }
+    33% { transform: translateY(-40px); }
+    66% { transform: translateY(-80px); }
+    100% { transform: translateY(0); }
+}
+
+/* About Section (Glide to Reveal) */
 #about {
     background: linear-gradient(135deg, #e6f0fa, #ffffff);
     padding: 4rem 2rem;
@@ -97,39 +134,38 @@ section {
 .profile-container {
     max-width: 1000px;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    flex-wrap: wrap;
     background: #ffffff;
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.profile-picture {
-    position: relative;
-    width: 200px;
-    height: 200px;
-}
-
-.profile-picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    border: 4px solid #005b99;
-    transition: transform 0.3s ease;
-}
-
-.profile-picture img:hover {
-    transform: scale(1.1);
-}
-
 .profile-info h1 {
     font-size: 2.5rem;
     color: #005b99;
     margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.profile-info h1:hover {
+    color: #003366;
+}
+
+.profile-info h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #003366;
+    transition: width 0.3s ease;
+}
+
+.profile-info h1:hover::after {
+    width: 100%;
 }
 
 .profile-info p {
@@ -137,7 +173,19 @@ section {
     color: #333333;
     text-align: justify;
     margin-bottom: 1rem;
-    animation: fadeInUp 1s ease-in-out;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: glideIn 1s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
+}
+
+.profile-info p:nth-child(2) { --i: 1; }
+.profile-info p:nth-child(3) { --i: 2; }
+.profile-info p:nth-child(4) { --i: 3; }
+.profile-info p:nth-child(5) { --i: 4; }
+
+@keyframes glideIn {
+    to { opacity: 1; transform: translateX(0); }
 }
 
 /* Skills Section */
@@ -145,15 +193,6 @@ section {
     background: #f9f9f9;
     padding: 3rem 2rem;
     text-align: center;
-}
-
-#skills h2 {
-    font-size: 2rem;
-    color: #005b99;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid #005b99;
-    display: inline-block;
-    padding-bottom: 0.5rem;
 }
 
 .expertise-content {
@@ -178,7 +217,6 @@ section {
     padding: 0.8rem;
     margin: 0.5rem 0;
     border-radius: 8px;
-    font-size: 0.9rem;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -204,29 +242,26 @@ section {
     left: 100%;
 }
 
+/* Tools and Technology Known (OS Dock) */
 .skills-carousel {
     display: flex;
-    overflow-x: auto;
-    gap: 1.5rem;
+    justify-content: center;
+    gap: 1rem;
     padding: 1rem 0;
-    scrollbar-width: none;
-}
-
-.skills-carousel::-webkit-scrollbar {
-    display: none;
 }
 
 .skills-carousel img {
     height: 50px;
     object-fit: contain;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, margin 0.3s ease;
 }
 
 .skills-carousel img:hover {
-    transform: scale(1.2);
+    transform: scale(1.5) translateY(-10px);
+    margin: 0 1rem;
 }
 
-/* Projects Section */
+/* Projects Section (Kinetic CSS Loaders) */
 #projects {
     background: #f9f9f9;
     padding: 3rem 2rem;
@@ -245,13 +280,34 @@ section {
     background: #ffffff;
     border-radius: 12px;
     padding: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
 }
 
 .project-thumbnail:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-thumbnail::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid transparent;
+    border-radius: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.project-thumbnail:hover::before {
+    border-color: #005b99;
+    animation: kineticSpin 1.5s linear infinite;
+}
+
+@keyframes kineticSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .project-thumbnail img {
@@ -282,13 +338,35 @@ section {
     border-radius: 25px;
     text-decoration: none;
     margin-top: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.project-details a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: -1;
+}
+
+.project-details a:hover::before {
+    width: 300px;
+    height: 300px;
 }
 
 .project-details a:hover {
     background: #003366;
 }
 
-/* Certifications Section */
+/* Certifications Section (Card Hover Effect) */
 #certifications {
     background: #f9f9f9;
     padding: 3rem 2rem;
@@ -307,11 +385,14 @@ section {
     border-radius: 12px;
     padding: 1rem;
     max-width: 250px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .cert-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: #005b99;
 }
 
 .cert-image {
@@ -335,7 +416,7 @@ section {
     text-decoration: underline;
 }
 
-/* Experience Section */
+/* Professional Experience Section (Card Hover Effect) */
 #experience {
     background: #f9f9f9;
     padding: 3rem 2rem;
@@ -353,11 +434,14 @@ section {
     border-radius: 12px;
     padding: 1.5rem;
     max-width: 300px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: #005b99;
 }
 
 .card-header h3 {
@@ -381,13 +465,35 @@ section {
     padding: 0.5rem 1rem;
     border-radius: 25px;
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.card-body a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: -1;
+}
+
+.card-body a:hover::before {
+    width: 300px;
+    height: 300px;
 }
 
 .card-body a:hover {
     background: #003366;
 }
 
-/* Virtual Programs Section */
+/* Virtual Programs Section (Kinetic CSS Loaders) */
 #virtual-programs {
     background: #f9f9f9;
     padding: 3rem 2rem;
@@ -405,11 +511,29 @@ section {
     border-radius: 12px;
     padding: 1.5rem;
     max-width: 300px;
+    position: relative;
     transition: transform 0.3s ease;
 }
 
 .program:hover {
     transform: translateY(-10px);
+}
+
+.program::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid transparent;
+    border-radius: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.program:hover::before {
+    border-color: #005b99;
+    animation: kineticSpin 1.5s linear infinite;
 }
 
 .program h3 {
@@ -422,7 +546,7 @@ section {
     color: #333333;
 }
 
-/* Contact Section */
+/* Contact Section (Hover Effect for Headers) */
 #contact {
     background: linear-gradient(135deg, #e6f0fa, #ffffff);
     padding: 4rem 2rem;
@@ -441,6 +565,29 @@ section {
 .contact-container h2 {
     font-size: 2rem;
     color: #005b99;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-container h2:hover {
+    color: #003366;
+    transform: scale(1.1);
+}
+
+.contact-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #003366;
+    transition: width 0.3s ease;
+}
+
+.contact-container h2:hover::after {
+    width: 100%;
 }
 
 .contact-info p {
@@ -488,17 +635,11 @@ footer {
         margin: 0.5rem 0;
     }
 
-    .profile-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .profile-picture {
-        width: 150px;
-        height: 150px;
-    }
-
     .projects-grid, .experience-cards, .certificates, .program-list {
         grid-template-columns: 1fr;
+    }
+
+    .skills-carousel img:hover {
+        margin: 0 0.5rem;
     }
 }
