@@ -5,8 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dhavasakthi S - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
 </head>
 <body>
+    <section class="menu">
+        <input type="checkbox" id="menu">
+        <div class="menu-container">
+            <label for="menu">
+                <div class="menu"></div>
+            </label>
+            <div class="box">
+                <h1><a href="#about">About</a></h1>
+                <h1><a href="#education">Education</a></h1>
+                <h1><a href="#skills">Skills</a></h1>
+                <h1><a href="#projects">Projects</a></h1>
+                <h1><a href="#certifications">Certifications</a></h1>
+                <h1><a href="#experience">Experience</a></h1>
+                <h1><a href="#virtual-programs">Virtual Programs</a></h1>
+                <h1><a href="#contact">Contact</a></h1>
+                <div class="move-item"></div>
+            </div>
+        </div>
+    </section>
+
     <header>
         <div class="header-content">
             <h1>Welcome</h1>
@@ -26,36 +47,36 @@
         </div>
     </header>
 
-
     <main>
         <section id="about">
             <div class="profile-container">
-                <div class="profile-picture">
-                    <img src="profile-pic.jpg" alt="Profile Picture">
-                </div>
                 <div class="profile-info">
                     <h1 class="fade-in">DHAVASAKTHI S</h1>
                     <p class="slide-up">
-                        I am a recent graduate with a B.Tech in Artificial Intelligence and Data Science, and I am passionate about leveraging data to drive meaningful insights and solutions. Throughout my academic journey and various hands-on experiences, I have developed strong expertise in data analysis, machine learning, and <br> deep learning.</p>
+                        I am a recent graduate with a B.Tech in Artificial Intelligence and Data Science, and I am passionate about leveraging data to drive meaningful insights and solutions. Throughout my academic journey and various hands-on experiences, I have developed strong expertise in data analysis, machine learning, and deep learning.
+                    </p>
                     <p class="slide-up">
-                        I have worked on projects such as customer churn prediction models and AI-driven solutions for skin cancer severity prediction, using tools like Python, SQL, TensorFlow, and Keras. Additionally, I have built dynamic data visualization dashboards like the Paris 2024 Olympics Dashboard and Netflix Content Analysis Dashboard, utilizing Power BI and Tableau to translate complex datasets into clear, actionable insights.</p>
+                        I have worked on projects such as customer churn prediction models and AI-driven solutions for skin cancer severity prediction, using tools like Python, SQL, TensorFlow, and Keras. Additionally, I have built dynamic data visualization dashboards like the Paris 2024 Olympics Dashboard and Netflix Content Analysis Dashboard, utilizing Power BI and Tableau to translate complex datasets into clear, actionable insights.
+                    </p>
                     <p class="slide-up">
-                        My experiences with diverse virtual programs have refined my data cleaning, modeling, and visualization skills, preparing me to tackle real-world challenges with innovative solutions. These experiences have equipped me with a solid foundation in Generative AI, data analysis, problem-solving, and effective communication with stakeholders.</p>
+                        My experiences with diverse virtual programs have refined my data cleaning, modeling, and visualization skills, preparing me to tackle real-world challenges with innovative solutions. These experiences have equipped me with a solid foundation in Generative AI, data analysis, problem-solving, and effective communication with stakeholders.
+                    </p>
                     <p class="slide-up">
-                        I am excited to bring my technical expertise, creative problem-solving approach, and enthusiasm for data science to new and challenging projects.</p>
+                        I am excited to bring my technical expertise, creative problem-solving approach, and enthusiasm for data science to new and challenging projects.
+                    </p>
                 </div>
-                            </div>
-        </section>
-        
-        <section id="education">
-            <h2>Education</h2>
-            <p>Bachelor’s in Artificial Intelligence and Data Science, </p>
-               <p>Karunya Institute of Technology and Sciences</p>                                                                                                                                                                                                                          2024</p>
+            </div>
         </section>
 
-        
+        <section id="education">
+            <h2>Education <span id="flip"><div><div>Explore</div><div>Discover</div><div>Learn</div></div></span></h2>
+            <p>Bachelor’s in Artificial Intelligence and Data Science</p>
+            <p>Karunya Institute of Technology and Sciences</p>
+            <p>2024</p>
+        </section>
+
         <section id="skills">
-            <h2>Expertise</h2>
+            <h2>Expertise <span id="flip"><div><div>Explore</div><div>Discover</div><div>Learn</div></div></span></h2>
             <div class="expertise-content">
                 <div class="skills-list">
                     <ul>
@@ -89,34 +110,32 @@
                         <li>RAG (Retrieval-Augmented Generation)</li>
                     </ul>
                 </div>
-                
             </div>
-        
-            <h2>Tools And Technology Known</h2>
+            <h2>Tools And Technology Known <span id="flip"><div><div>Explore</div><div>Develop</div><div>Master</div></div></span></h2>
             <div class="skills-carousel">
                 <img src="python-logo.png" alt="Python" title="Python">
                 <img src="sql-logo.png" alt="SQL" title="SQL">
                 <img src="powerbi-logo.png" alt="Power BI" title="Power BI">
                 <img src="tableau-logo.png" alt="Tableau" title="Tableau">
                 <img src="matplot-logo.png" alt="Matplotlib" title="Matplotlib">
+                <imgplotlib">
                 <img src="scikit-learn-logo.png" alt="Scikit-learn" title="Scikit-learn">
                 <img src="tensorflow-logo.png" alt="TensorFlow" title="TensorFlow">
                 <img src="nlp-logo.png" alt="NLP" title="NLP">
                 <img src="keras-logo.png" alt="Keras" title="Keras">
                 <img src="excel-logo.png" alt="Excel" title="Excel">
                 <img src="jupiter-logo.png" alt="Jupyter" title="Jupyter">
-                <!-- Add more logos as needed -->
             </div>
         </section>
-        
+
         <section id="projects">
-            <h2>Projects</h2>
+            <h2>Projects <span id="flip"><div><div>Explore</div><div>Discover</div><div>Learn</div></div></span></h2>
             <div class="projects-grid">
                 <div class="project-thumbnail" onclick="toggleDetails(this)">
                     <img src="skin-cancer-thumbnail.jpg" alt="Skin Cancer Severity Prediction">
                     <h3>Skin Cancer Severity Prediction</h3>
                     <div class="project-details">
-                        <p>Tools Used: Tensorflow, Scikit-Learn, Keras, Neural Network. </p>
+                        <p>Tools Used: Tensorflow, Scikit-Learn, Keras, Neural Network.</p>
                         <p>Developed an AI-driven model with 99.03% accuracy to enhance diagnostic reliability in healthcare. Utilized deep learning techniques, fine-tuned on the HAM10000 dataset, outperforming other models like MobileNet and VGG-16.</p>
                         <a href="https://github.com/dhavasakthis/Severity-of-Skin-Cancer-Prediction-Using-Artificial-Intelligence-Techniques.git" target="_blank">View Project</a>
                     </div>
@@ -125,10 +144,8 @@
                     <img src="ccp.jpg" alt="Customer Churn Prediction">
                     <h3>Customer Churn Prediction</h3>
                     <div class="project-details">
-                        <p>Tools Used: Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Imbalanced-learn, Machine Learning.</p> 
-                        <p>Predicted customer churn using the Bank Churn Modelling dataset with Support Vector Classifier (SVC), utilizing data preprocessing, feature engineering, and scaling techniques.
-Applied under-sampling and over-sampling to address class imbalance, achieving a model accuracy of 96% and improving performance evaluation through accuracy, confusion matrices, and classification reports. 
-Optimized model accuracy via hyperparameter tuning with GridSearchCV.</p>
+                        <p>Tools Used: Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Imbalanced-learn, Machine Learning.</p>
+                        <p>Predicted customer churn using the Bank Churn Modelling dataset with Support Vector Classifier (SVC), utilizing data preprocessing, feature engineering, and scaling techniques. Applied under-sampling and over-sampling to address class imbalance, achieving a model accuracy of 96% and improving performance evaluation through accuracy, confusion matrices, and classification reports. Optimized model accuracy via hyperparameter tuning with GridSearchCV.</p>
                         <a href="https://github.com/dhavasakthis/Churn-Prediction" target="_blank">View Project</a>
                     </div>
                 </div>
@@ -136,7 +153,7 @@ Optimized model accuracy via hyperparameter tuning with GridSearchCV.</p>
                     <img src="olympics-thumbnail.jpg" alt="Paris 2024 Olympics Dashboard">
                     <h3>Paris 2024 Olympics Dashboard</h3>
                     <div class="project-details">
-                        <p>Tools Used: Power-BI. </p>
+                        <p>Tools Used: Power-BI.</p>
                         <p>Created a dynamic, real-time dashboard using Power BI and Python, enabling strategic decision-making for event management.</p>
                         <a href="https://github.com/dhavasakthis/Paris-Olympics-Dash-Board-using-Power-BI.git" target="_blank">View Project</a>
                     </div>
@@ -163,62 +180,55 @@ Optimized model accuracy via hyperparameter tuning with GridSearchCV.</p>
                     <img src="ne.jpg" alt="E-Commerce Customer Segmentation and Prediction">
                     <h3>E-Commerce Customer Segmentation and Prediction</h3>
                     <div class="project-details">
-                         <p>Tools Used: Python, Scikit-Learn, Tableau.</p>
+                        <p>Tools Used: Python, Scikit-Learn, Tableau.</p>
                         <p>Implemented machine learning techniques to segment e-commerce customers, providing targeted insights to enhance retention and predict future purchasing behavior.</p>
                         <a href="https://github.com/dhavasakthis/E-Commerce-Customer-Segmentation-and-Prediction.git" target="_blank">View Project</a>
                     </div>
                 </div>
-
-         <div class="projects-grid">
-         <div class="project-thumbnail" onclick="toggleDetails(this)">
-        <img src="sql-chat-assistant-thumbnail.jpg" alt="SQL Chat Assistant">
-        <h3>SQL Chat Assistant</h3>
-        <div class="project-details">
-            <p>Tools Used: Streamlit, LangChain, Ollama, pyodbc, SQL Server</p>
-            <p>Developed an interactive Streamlit app that allows users to query an SQL Server database using natural language. Leverages LangChain and Ollama for AI-driven query generation, providing intuitive data insights.</p>
-            <a href="https://github.com/dhavasakthis/sql-chat-assistant" target="_blank">View Project</a>
-        </div>
-    </div>
-</div>
-
-                <!-- Project Upload Form -->
+                <div class="project-thumbnail" onclick="toggleDetails(this)">
+                    <img src="sql-chat-assistant-thumbnail.jpg" alt="SQL Chat Assistant">
+                    <h3>SQL Chat Assistant</h3>
+                    <div class="project-details">
+                        <p>Tools Used: Streamlit, LangChain, Ollama, pyodbc, SQL Server</p>
+                        <p>Developed an interactive Streamlit app that allows users to query an SQL Server database using natural language. Leverages LangChain and Ollama for AI-driven query generation, providing intuitive data insights.</p>
+                        <a href="https://github.com/dhavasakthis/sql-chat-assistant" target="_blank">View Project</a>
+                    </div>
+                </div>
             </div>
         </section>
 
-            
-    <section id="certifications">
-            <h2>Certifications</h2>
-    <div class="certificates">
-    <div class="cert-card">
-        <img src="certificate1.jpg" alt="Certificate 1" class="cert-image" onclick="toggleEnlarge(this)">
-        <ul>
-            <li><a href="https://www.credly.com/badges/b922d496-91f8-4985-85d1-361de85592d5/public_url" target="_blank">Data Analytics Essentials</a></li>
-            <li>Date: August 2024</li>
-            <li>Issued by: Cisco</li>
-        </ul>
-    </div>
-    <div class="cert-card">
-        <img src="certificate2.jpg" alt="Certificate 2" class="cert-image" onclick="toggleEnlarge(this)">
-        <ul>
-            <li><a href="certificate2-link.pdf" target="_blank">Data Science</a></li>
-            <li>Date: November 2024</li>
-            <li>Issued by:  Boston Institute of Analytics</li>
-        </ul>
-    </div>
-    <div class="cert-card">
-        <img src="certificate3.jpg" alt="Certificate 3" class="cert-image" onclick="toggleEnlarge(this)">
-        <ul>
-            <li><a href="certificate3-link.pdf" target="_blank">Artificial Intelligence </a></li>
-            <li>Date: November 2024</li>
-            <li>Issued by: Boston Institute of Analytics</li>
-        </ul>
-    </div>
+        <section id="certifications">
+            <h2>Certifications <span id="flip"><div><div>Explore</div><div>Discover</div><div>Learn</div></div></span></h2>
+            <div class="certificates">
+                <div class="cert-card">
+                    <img src="certificate1.jpg" alt="Certificate 1" class="cert-image" onclick="toggleEnlarge(this)">
+                    <ul>
+                        <li><a href="https://www.credly.com/badges/b922d496-91f8-4985-85d1-361de85592d5/public_url" target="_blank">Data Analytics Essentials</a></li>
+                        <li>Date: August 2024</li>
+                        <li>Issued by: Cisco</li>
+                    </ul>
+                </div>
+                <div class="cert-card">
+                    <img src="certificate2.jpg" alt="Certificate 2" class="cert-image" onclick="toggleEnlarge(this)">
+                    <ul>
+                        <li><a href="certificate2-link.pdf" target="_blank">Data Science</a></li>
+                        <li>Date: November 2024</li>
+                        <li>Issued by: Boston Institute of Analytics</li>
+                    </ul>
+                </div>
+                <div class="cert-card">
+                    <img src="certificate3.jpg" alt="Certificate 3" class="cert-image" onclick="toggleEnlarge(this)">
+                    <ul>
+                        <li><a href="certificate3-link.pdf" target="_blank">Artificial Intelligence</a></li>
+                        <li>Date: November 2024</li>
+                        <li>Issued by: Boston Institute of Analytics</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
-
-    
         <section id="experience">
-            <h2>Professional Experience</h2>
+            <h2>Professional Experience <span id="flip"><div><div>Explore</div><div>Discover</div><div>Learn</div></div></span></h2>
             <div class="experience-cards">
                 <div class="card">
                     <div class="card-header">
@@ -226,9 +236,7 @@ Optimized model accuracy via hyperparameter tuning with GridSearchCV.</p>
                         <span>YBI Foundation (Aug 2024 - Sep 2024)</span>
                     </div>
                     <div class="card-body">
-                        <p>Developed skills in Python, data cleaning, preprocessing, and exploratory data analysis (EDA).
-Gained experience with Pandas, NumPy, Matplotlib, and other data analytics libraries.
-Applied techniques for model building and handling imbalanced datasets.</p>
+                        <p>Developed skills in Python, data cleaning, preprocessing, and exploratory data analysis (EDA). Gained experience with Pandas, NumPy, Matplotlib, and other data analytics libraries. Applied techniques for model building and handling imbalanced datasets.</p>
                         <a href="Internship+Data+Analytics+-+30days.pdf" target="_blank">View Certificate</a>
                     </div>
                 </div>
@@ -254,10 +262,9 @@ Applied techniques for model building and handling imbalanced datasets.</p>
                 </div>
             </div>
         </section>
-        
 
         <section id="virtual-programs">
-            <h2>Virtual Experience Programs</h2>
+            <h2>Virtual Experience Programs <span id="flip"><div><div>Explore</div><div>Discover</div><div>Learn</div></div></span></h2>
             <div class="program-list">
                 <div class="program">
                     <h3>Accenture North America: Navigating Numbers</h3>
@@ -272,29 +279,46 @@ Applied techniques for model building and handling imbalanced datasets.</p>
                     <p>Focused on communicating insights, choosing the right visuals, and creating effective visualizations.</p>
                 </div>
             </div>
-            <section id="contact">
-                <div class="contact-container">
-                    <h2 class="fade-in">Contact</h2>
-                    <div class="contact-info">
-                        <p>Email: <a href="mailto:sdhavasakthi27@gmail.com">sdhavasakthi27@gmail.com</a></p>
-                        <p>Phone: +91 7825992918</p>
-                        <p>Location: Coimbatore, Tamil Nadu, India</p>
-                        <p>
-                            <a href="https://www.linkedin.com/in/dhavasakthis/" target="_blank" class="contact-link">LinkedIn</a> |
-                            <a href="https://github.com/dhavasakthis" target="_blank" class="contact-link">GitHub</a>
-                        </p>
+        </section>
+
+        <section id="contact">
+            <div class="contact-container">
+                <h2>Contact <span id="flip"><div><div>Explore</div><div>Connect</div><div>Reach</div></div></span></h2>
+                <div class="letter-image">
+                    <div class="animated-mail">
+                        <div class="back-fold"></div>
+                        <div class="letter">
+                            <div class="letter-border"></div>
+                            <div class="letter-title"></div>
+                            <div class="letter-context"></div>
+                            <div class="letter-stamp"></div>
+                        </div>
+                        <div class="top-fold"></div>
+                        <div class="body"></div>
+                        <div class="left-fold"></div>
                     </div>
+                    <div class="shadow"></div>
                 </div>
-            </section>
-            
-            <footer>
-                <div class="footer-content">
-                    <p>&copy; 2024 Dhavasakthi S. All rights reserved.</p>
+                <div class="contact-info">
+                    <p>Email: <a href="mailto:sdhavasakthi27@gmail.com">sdhavasakthi27@gmail.com</a></p>
+                    <p>Phone: +91 7825992918</p>
+                    <p>Location: Coimbatore, Tamil Nadu, India</p>
+                    <p>
+                        <a href="https://www.linkedin.com/in/dhavasakthis/" target="_blank" class="contact-link">LinkedIn</a> |
+                        <a href="https://github.com/dhavasakthis" target="_blank" class="contact-link">GitHub</a>
+                    </p>
                 </div>
-            </footer>
-            
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p>© 2024 Dhavasakthi S. All rights reserved.</p>
+            </div>
+        </footer>
     </main>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
