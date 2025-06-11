@@ -1,3 +1,7 @@
+/* External CSS */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat&display=swap');
+
 /* Global Styles */
 * {
     margin: 0;
@@ -6,22 +10,226 @@
 }
 
 body {
-    background-color: #ffffff;
+    background-color: #1e2228;
     color: #333333;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter', 'Montserrat', sans-serif;
     line-height: 1.6;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
-/* Header and Menu Styling (Pure CSS Menu) */
+/* Menu Container (Pure CSS Menu) */
+.menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: #1e2228;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    transition: opacity 0.5s ease;
+}
+
+#menu:checked ~ .menu-container {
+    opacity: 0;
+    pointer-events: none;
+}
+
+label {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 65px;
+    cursor: pointer;
+    transition: transform 0.5s ease 0.7s;
+}
+
+#menu {
+    display: none;
+}
+
+#menu:checked ~ label {
+    transform: translateY(-100px);
+}
+
+.menu {
+    position: relative;
+    width: 55px;
+    height: 3px;
+    background: #333333;
+}
+
+.menu:after, .menu:before {
+    content: '';
+    position: absolute;
+    background: #333333;
+    width: 55px;
+    height: 3px;
+    transition: 0.5s;
+    transition-delay: 0.2s;
+}
+
+.menu:after {
+    top: -10px;
+}
+
+.menu:before {
+    top: 10px;
+}
+
+#menu:checked ~ label .menu:after {
+    transform: translateY(10px);
+    opacity: 0;
+}
+
+#menu:checked ~ label .menu:before {
+    transform: translateY(-10px);
+    opacity: 0;
+}
+
+#menu:checked ~ label .menu {
+    animation: move 0.5s ease forwards 1;
+    animation-delay: 0.6s;
+}
+
+@keyframes move {
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+#menu:checked ~ label .menu:before {
+    animation: move1 0.5s ease forwards 1;
+    animation-delay: 0.6s;
+}
+
+@keyframes move1 {
+    0% { opacity: 1; }
+    100% {
+        transform: rotate(90deg) translateY(2px) translateX(-8px);
+        opacity: 1;
+        height: 3px;
+    }
+}
+
+.box {
+    position: absolute;
+    background: #f0f2f5;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    transition: transform 0.8s ease 0.7s;
+    overflow: hidden;
+    transform: translateY(300px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu:checked ~ .box {
+    transform: translateY(0);
+}
+
+.box h1 {
+    position: relative;
+    font-size: 40px;
+    margin-right: 100px;
+    cursor: pointer;
+    color: #005b99;
+}
+
+.box h1:last-child {
+    margin-right: 0;
+}
+
+.box h1:first-child {
+    margin-left: 115px;
+}
+
+.move-item {
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    background: #1e2228;
+    border-top-right-radius: 400px;
+    border-bottom-right-radius: 125px;
+    top: -270px;
+    transition: transform 0.7s ease 0.1s;
+    transform: translateX(-250px) rotate(45deg);
+    animation: ooz 3s linear infinite;
+}
+
+@keyframes ooz {
+    0% { }
+    50% {
+        border-bottom-left-radius: 300px;
+        border-top-right-radius: 0;
+    }
+}
+
+.box h1:nth-child(1):after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #DEF06C;
+}
+
+.box h1:nth-child(2):after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #71C1D1;
+}
+
+.box h1:nth-child(3):after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #DD7171;
+}
+
+.box h1:nth-child(1):hover ~ .move-item {
+    transform: translate(-250px) rotate(45deg);
+}
+
+.box h1:nth-child(2):hover ~ .move-item {
+    transform: translate(10px) rotate(45deg);
+}
+
+.box h1:nth-child(3):hover ~ .move-item {
+    transform: translate(280px) rotate(45deg);
+}
+
+/* Header Styling */
 header {
-    background: linear-gradient(90deg, #e6f0fa, #ffffff);
+    background: linear-gradient(90deg, #1e2228, #2a2f38);
     padding: 1rem 2rem;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.5s ease 1s;
+}
+
+#menu:checked ~ header {
+    opacity: 1;
 }
 
 .header-content {
@@ -49,7 +257,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #005b99;
+    color: #f0f2f5;
     text-decoration: none;
     font-weight: 500;
     padding: 0.5rem 1rem;
@@ -80,18 +288,24 @@ nav ul li a:hover {
 main {
     margin-top: 80px;
     padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.5s ease 1s;
+}
+
+#menu:checked ~ main {
+    opacity: 1;
 }
 
 /* Section Styling */
 section {
     margin-bottom: 3rem;
     padding: 2rem;
-    background: #f9f9f9;
+    background: #f0f2f5;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Heading Animation (Simple Text Animation) */
+/* Heading Animation */
 section h2 {
     font-size: 2rem;
     color: #005b99;
@@ -126,7 +340,7 @@ section h2 {
 
 /* About Section (Glide to Reveal) */
 #about {
-    background: linear-gradient(135deg, #e6f0fa, #ffffff);
+    background: linear-gradient(135deg, #1e2228, #2a2f38);
     padding: 4rem 2rem;
     text-align: center;
 }
@@ -134,10 +348,10 @@ section h2 {
 .profile-container {
     max-width: 1000px;
     margin: 0 auto;
-    background: #ffffff;
+    background: #f0f2f5;
     border-radius: 12px;
     padding: 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .profile-info h1 {
@@ -190,7 +404,7 @@ section h2 {
 
 /* Skills Section */
 #skills {
-    background: #f9f9f9;
+    background: #f0f2f5;
     padding: 3rem 2rem;
     text-align: center;
 }
@@ -261,9 +475,9 @@ section h2 {
     margin: 0 1rem;
 }
 
-/* Projects Section (Kinetic CSS Loaders) */
+/* Projects Section (OS Dock) */
 #projects {
-    background: #f9f9f9;
+    background: #1e2228;
     padding: 3rem 2rem;
     text-align: center;
 }
@@ -277,37 +491,15 @@ section h2 {
 }
 
 .project-thumbnail {
-    background: #ffffff;
+    background: #f0f2f5;
     border-radius: 12px;
     padding: 1rem;
-    position: relative;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, margin 0.3s ease;
 }
 
 .project-thumbnail:hover {
-    transform: translateY(-10px);
-}
-
-.project-thumbnail::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    border: 2px solid transparent;
-    border-radius: 14px;
-    transition: border-color 0.3s ease;
-}
-
-.project-thumbnail:hover::before {
-    border-color: #005b99;
-    animation: kineticSpin 1.5s linear infinite;
-}
-
-@keyframes kineticSpin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    transform: scale(1.1) translateY(-10px);
+    margin: 0 1rem;
 }
 
 .project-thumbnail img {
@@ -358,7 +550,7 @@ section h2 {
 }
 
 .project-details a:hover::before {
-    width: 300px;
+    width:  respectable 300px;
     height: 300px;
 }
 
@@ -366,9 +558,9 @@ section h2 {
     background: #003366;
 }
 
-/* Certifications Section (Card Hover Effect) */
+/* Certifications Section (OS Dock) */
 #certifications {
-    background: #f9f9f9;
+    background: #1e2228;
     padding: 3rem 2rem;
     text-align: center;
 }
@@ -381,18 +573,16 @@ section h2 {
 }
 
 .cert-card {
-    background: #ffffff;
+    background: #f0f2f5;
     border-radius: 12px;
     padding: 1rem;
     max-width: 250px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-    border: 2px solid transparent;
+    transition: transform 0.3s ease, margin 0.3s ease;
 }
 
 .cert-card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    border-color: #005b99;
+    transform: scale(1.1) translateY(-10px);
+    margin: 0 1rem;
 }
 
 .cert-image {
@@ -416,9 +606,9 @@ section h2 {
     text-decoration: underline;
 }
 
-/* Professional Experience Section (Card Hover Effect) */
+/* Professional Experience Section (OS Dock) */
 #experience {
-    background: #f9f9f9;
+    background: #1e2228;
     padding: 3rem 2rem;
 }
 
@@ -430,18 +620,16 @@ section h2 {
 }
 
 .card {
-    background: #ffffff;
+    background: #f0f2f5;
     border-radius: 12px;
     padding: 1.5rem;
     max-width: 300px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-    border: 2px solid transparent;
+    transition: transform 0.3s ease, margin 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    border-color: #005b99;
+    transform: scale(1.1) translateY(-10px);
+    margin: 0 1rem;
 }
 
 .card-header h3 {
@@ -493,9 +681,9 @@ section h2 {
     background: #003366;
 }
 
-/* Virtual Programs Section (Kinetic CSS Loaders) */
+/* Virtual Programs Section (OS Dock) */
 #virtual-programs {
-    background: #f9f9f9;
+    background: #1e2228;
     padding: 3rem 2rem;
 }
 
@@ -507,33 +695,16 @@ section h2 {
 }
 
 .program {
-    background: #ffffff;
+    background: #f0f2f5;
     border-radius: 12px;
     padding: 1.5rem;
     max-width: 300px;
-    position: relative;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, margin 0.3s ease;
 }
 
 .program:hover {
-    transform: translateY(-10px);
-}
-
-.program::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    border: 2px solid transparent;
-    border-radius: 14px;
-    transition: border-color 0.3s ease;
-}
-
-.program:hover::before {
-    border-color: #005b99;
-    animation: kineticSpin 1.5s linear infinite;
+    transform: scale(1.1) translateY(-10px);
+    margin: 0 1rem;
 }
 
 .program h3 {
@@ -546,20 +717,163 @@ section h2 {
     color: #333333;
 }
 
-/* Contact Section (Hover Effect for Headers) */
+/* Contact Section (Animated Mail) */
 #contact {
-    background: linear-gradient(135deg, #e6f0fa, #ffffff);
+    background: #1e2228;
     padding: 4rem 2rem;
     text-align: center;
+    position: relative;
 }
 
 .contact-container {
     max-width: 600px;
     margin: 0 auto;
-    background: #ffffff;
+    background: #f0f2f5;
     border-radius: 12px;
     padding: 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.letter-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.animated-mail {
+    position: absolute;
+    height: 150px;
+    width: 200px;
+    transition: 0.4s;
+}
+
+.animated-mail .body {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 100px 200px;
+    border-color: transparent transparent #005b99 transparent;
+    z-index: 2;
+}
+
+.animated-mail .top-fold {
+    position: absolute;
+    top: 50px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 100px 0 100px;
+    transform-origin: 50% 0%;
+    transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+    border-color: #003366 transparent transparent transparent;
+    z-index: 2;
+}
+
+.animated-mail .back-fold {
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 100px;
+    background: #003366;
+    z-index: 0;
+}
+
+.animated-mail .left-fold {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 0 50px 100px;
+    border-color: transparent transparent transparent #004080;
+    z-index: 2;
+}
+
+.animated-mail .letter {
+    left: 20px;
+    bottom: 0;
+    position: absolute;
+    width: 160px;
+    height: 60px;
+    background: #f0f2f5;
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.4s 0.2s;
+}
+
+.animated-mail .letter .letter-border {
+    height: 10px;
+    width: 100%;
+    background: repeating-linear-gradient(
+        -45deg,
+        #005b99,
+        #005b99 8px,
+        transparent 8px,
+        transparent 18px
+    );
+}
+
+.animated-mail .letter .letter-title {
+    margin-top: 10px;
+    margin-left: 5px;
+    height: 10px;
+    width: 40%;
+    background: #005b99;
+}
+
+.animated-mail .letter .letter-context {
+    margin-top: 10px;
+    margin-left: 5px;
+    height: 10px;
+    width: 20%;
+    background: #005b99;
+}
+
+.animated-mail .letter .letter-stamp {
+    margin-top: 30px;
+    margin-left: 120px;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    background: #005b99;
+    opacity: 0.3;
+}
+
+.shadow {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    width: 400px;
+    height: 30px;
+    transition: 0.4s;
+    transform: translateX(-50%);
+    border-radius: 100%;
+    background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0));
+}
+
+.letter-image:hover .animated-mail {
+    transform: translateY(50px);
+}
+
+.letter-image:hover .animated-mail .top-fold {
+    transition: transform 0.4s, z-index 0.2s;
+    transform: rotateX(180deg);
+    z-index: 0;
+}
+
+.letter-image:hover .animated-mail .letter {
+    height: 180px;
+}
+
+.letter-image:hover .shadow {
+    width: 250px;
 }
 
 .contact-container h2 {
@@ -606,8 +920,8 @@ section h2 {
 
 /* Footer */
 footer {
-    background: #e6f0fa;
-    color: #333333;
+    background: #1e2228;
+    color: #f0f2f5;
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
@@ -639,7 +953,25 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .skills-carousel img:hover {
+    .skills-carousel img:hover, .project-thumbnail:hover, .cert-card:hover, .card:hover, .program:hover {
         margin: 0 0.5rem;
+    }
+
+    .box {
+        flex-direction: column;
+        height: auto;
+        padding: 2rem;
+    }
+
+    .box h1 {
+        margin: 0.5rem 0;
+    }
+
+    .box h1:first-child {
+        margin-left: 0;
+    }
+
+    .move-item {
+        display: none;
     }
 }
