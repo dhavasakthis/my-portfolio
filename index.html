@@ -9,44 +9,33 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Orbitron:wght@700&display=swap">
 </head>
 <body>
-    <section class="menu">
-        <input type="checkbox" id="menu">
-        <div class="menu-container">
-            <div class="intro-text">
-                <h1 class="name">Dhavasakthi</h1>
-                <p class="title">AI Engineer</p>
-            </div>
-            <label for="menu" class="hamburger">
-                <span class="menu-line"></span>
-            </label>
-            <div class="box">
-                <h1><a href="#about">About</a></h1>
-                <h1><a href="#skills">Skills</a></h1>
-                <h1><a href="#projects">Projects</a></h1>
-                <h1><a href="#experience">Experience</a></h1>
-                <h1><a href="#certifications">Certifications</a></h1>
-                <h1><a href="#virtual-programs">Virtual Programs</a></h1>
-                <h1><a href="#contact">Contact</a></h1>
-                <div class="move-item"></div>
-            </div>
+    <div id="landing">
+        <div class="landing-content">
+            <h1 class="name">Dhavasakthi Sailappan</h1>
+            <p class="title">AI Engineer</p>
+            <button class="explore-button" id="explore-button">Explore Portfolio</button>
         </div>
-    </section>
+        <canvas id="particle-canvas"></canvas>
+    </div>
 
     <header>
         <div class="header-content">
-            <h1>Dhavasakthi</h1>
+            <h1>Welcome</h1>
             <nav>
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
-                    <li><a href="#virtual-programs">Virtual Programs</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                    <li><a href="#virtual-programs" class="nav-link">Virtual Programs</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
-            <a href="DHAVASAKTHI_resume.pdf" class="download-button" download>Download Resume</a>
+            <div class="header-buttons">
+                <button class="return-button" id="return-button">Return to Home</button>
+                <a href="DHAVASAKTHI_resume.pdf" class="download-button" download>Download Resume</a>
+            </div>
         </div>
     </header>
 
@@ -54,22 +43,22 @@
         <section id="about">
             <div class="profile-container">
                 <div class="profile-info">
-                    <h1 class="fade-in">Dhavasakthi</h1>
+                    <h1 class="fade-in">Dhavasakthi Sailappan</h1>
                     <p class="slide-up">
-                        As an AI Engineer with a B.Tech in Artificial Intelligence and Data Science, I specialize in building intelligent systems that solve real-world problems. My expertise spans machine learning, deep learning, and generative AI, with a focus on large language models (LLMs) and retrieval-augmented generation (RAG).
+                        As an AI Engineer with a B.Tech in Artificial Intelligence and Data Science, I craft intelligent systems that transform industries. My expertise lies in machine learning, deep learning, and generative AI, with a focus on large language models (LLMs) and retrieval-augmented generation (RAG).
                     </p>
                     <p class="slide-up">
-                        I’ve developed innovative projects like the SQL Chat Assistant, which uses LangChain and Ollama to enable natural language database queries, and a skin cancer prediction model achieving 99.03% accuracy using TensorFlow and Keras. My data visualization skills shine in dashboards like the Paris 2024 Olympics and Netflix Content Analysis, built with Power BI and Tableau.
+                        I’ve pioneered projects like the SQL Chat Assistant, enabling natural language database queries with LangChain and Ollama, and a skin cancer diagnosis model with 99.03% accuracy using TensorFlow and Keras. My visualization skills shine in dashboards like the Paris 2024 Olympics and Netflix Content Analysis, built with Power BI and Tableau.
                     </p>
                     <p class="slide-up">
-                        With hands-on experience from internships and virtual programs, I excel in data engineering, model deployment, and stakeholder communication. I’m passionate about pushing the boundaries of AI to create impactful solutions.
+                        With internships and virtual programs, I’ve honed data engineering, model deployment, and stakeholder communication. I’m driven to innovate at the cutting edge of AI.
                     </p>
                 </div>
             </div>
         </section>
 
         <section id="skills">
-            <h2>Skills <span id="flip"><div><div>Innovate</div><div>Engineer</div><div>Transform</div></div></span></h2>
+            <h2>Skills <span class="flip"><div><div>Innovate</div><div>Engineer</div><div>Transform</div></div></span></h2>
             <div class="expertise-content">
                 <div class="skills-list">
                     <h3>AI & Machine Learning</h3>
@@ -81,7 +70,7 @@
                         <li>RAG</li>
                         <li>Classification</li>
                         <li>Clustering</li>
-                        <li>Regression Techniques</li>
+                        <li>Regression</li>
                     </ul>
                     <h3>Data Engineering</h3>
                     <ul>
@@ -103,7 +92,7 @@
                     </ul>
                 </div>
             </div>
-            <h2>Tools & Technologies <span id="flip"><div><div>Innovate</div><div>Develop</div><div>Master</div></div></span></h2>
+            <h2>Tools & Technologies <span class="flip"><div><div>Innovate</div><div>Develop</div><div>Master</div></div></span></h2>
             <div class="skills-carousel">
                 <img src="python-logo.png" alt="Python" title="Python">
                 <img src="sql-logo.png" alt="SQL" title="SQL">
@@ -119,14 +108,14 @@
         </section>
 
         <section id="projects">
-            <h2>Projects <span id="flip"><div><div>Think</div><div>Code</div><div>Deploy</div></div></span></h2>
+            <h2>Projects <span class="flip"><div><div>Innovate</div><div>Engineer</div><div>Transform</div></div></span></h2>
             <div class="projects-grid">
                 <div class="project-thumbnail" onclick="toggleDetails(this)">
                     <img src="sql-chat-assistant-thumbnail.jpg" alt="SQL Chat Assistant">
                     <h3>SQL Chat Assistant</h3>
                     <div class="project-details">
                         <p>Tools: Streamlit, LangChain, Ollama, pyodbc, SQL Server</p>
-                        <p>Built an interactive Streamlit app enabling natural language queries on SQL Server databases using LangChain and Ollama, streamlining data access for non-technical users.</p>
+                        <p>Built an AI-powered Streamlit app for natural language SQL queries, enhancing data accessibility with LangChain and Ollama.</p>
                         <a href="https://github.com/dhavasakthis/sql-chat-assistant" target="_blank">View Project</a>
                     </div>
                 </div>
@@ -135,7 +124,7 @@
                     <h3>Skin Cancer Diagnosis AI</h3>
                     <div class="project-details">
                         <p>Tools: TensorFlow, Scikit-Learn, Keras, Neural Networks</p>
-                        <p>Developed a deep learning model with 99.03% accuracy for skin cancer severity prediction, fine-tuned on HAM10000 dataset, surpassing MobileNet and VGG-16.</p>
+                        <p>Achieved 99.03% accuracy in skin cancer severity prediction using deep learning on the HAM10000 dataset.</p>
                         <a href="https://github.com/dhavasakthis/Severity-of-Skin-Cancer-Prediction-Using-Artificial-Intelligence-Techniques.git" target="_blank">View Project</a>
                     </div>
                 </div>
@@ -143,8 +132,8 @@
                     <img src="ccp.jpg" alt="Customer Churn Prediction">
                     <h3>Customer Churn Prediction</h3>
                     <div class="project-details">
-                        <p>Tools: Python, Pandas, NumPy, Scikit-learn, Imbalanced-learn</p>
-                        <p>Achieved 96% accuracy in predicting customer churn using SVC, with hyperparameter tuning and handling class imbalance via sampling techniques.</p>
+                        <p>Tools: Python, Pandas, NumPy, Scikit-learn</p>
+                        <p>Developed a 96% accurate churn prediction model using SVC with hyperparameter tuning.</p>
                         <a href="https://github.com/dhavasakthis/Churn-Prediction" target="_blank">View Project</a>
                     </div>
                 </div>
@@ -153,7 +142,7 @@
                     <h3>Paris 2024 Olympics Dashboard</h3>
                     <div class="project-details">
                         <p>Tools: Power BI, Python</p>
-                        <p>Designed a real-time Power BI dashboard for Olympic event management, integrating Python for advanced data processing.</p>
+                        <p>Created a real-time Power BI dashboard for Olympic event insights.</p>
                         <a href="https://github.com/dhavasakthis/Paris-Olympics-Dash-Board-using-Power-BI.git" target="_blank">View Project</a>
                     </div>
                 </div>
@@ -162,7 +151,7 @@
                     <h3>Netflix Content Dashboard</h3>
                     <div class="project-details">
                         <p>Tools: Tableau</p>
-                        <p>Created an interactive Tableau dashboard to analyze Netflix content trends, driving insights for content strategy.</p>
+                        <p>Designed an interactive Tableau dashboard for Netflix content trends.</p>
                         <a href="https://public.tableau.com/views/NetflixDashboard_17240664039680/NetflixDashBoard" target="_blank">View Project</a>
                     </div>
                 </div>
@@ -171,7 +160,7 @@
                     <h3>Global Lay-off Data Cleaning</h3>
                     <div class="project-details">
                         <p>Tools: SQL</p>
-                        <p>Cleaned a global lay-off dataset using SQL, removing duplicates and standardizing formats for analysis-ready data.</p>
+                        <p>Cleaned global lay-off data using SQL for analysis-ready insights.</p>
                         <a href="https://github.com/dhavasakthis/World-Lay-off-Data-Cleaning-using-SQL.git" target="_blank">View Project</a>
                     </div>
                 </div>
@@ -180,7 +169,7 @@
                     <h3>E-Commerce Customer Segmentation</h3>
                     <div class="project-details">
                         <p>Tools: Python, Scikit-Learn, Tableau</p>
-                        <p>Segmented e-commerce customers using ML techniques, enhancing retention strategies with predictive insights.</p>
+                        <p>Segmented customers using ML for targeted retention strategies.</p>
                         <a href="https://github.com/dhavasakthis/E-Commerce-Customer-Segmentation-and-Prediction.git" target="_blank">View Project</a>
                     </div>
                 </div>
@@ -188,7 +177,7 @@
         </section>
 
         <section id="experience">
-            <h2>Experience <span id="flip"><div><div>Innovate</div><div>Engineer</div><div>Transform</div></div></span></h2>
+            <h2>Experience <span class="flip"><div><div>Innovate</div><div>Engineer</div><div>Transform</div></div></span></h2>
             <div class="experience-cards">
                 <div class="card">
                     <div class="card-header">
@@ -196,8 +185,8 @@
                         <span>YBI Foundation (Aug 2024 - Sep 2024)</span>
                     </div>
                     <div class="card-body">
-                        <p>Mastered Python-based data cleaning, EDA, and model building using Pandas, NumPy, and Matplotlib, focusing on imbalanced datasets.</p>
-                        <a href="Internship+Data+Analytics+-+30days.pdf" target="_blank">View Certificate</a>
+                        <p>Mastered Python-based EDA and model building with Pandas and NumPy.</p>
+                        <a href="Internship+Data+Analytics_-_30days.pdf" target="_blank">View Certificate</a>
                     </div>
                 </div>
                 <div class="card">
@@ -206,25 +195,25 @@
                         <span>Exposys DataLab (Jun 2023 - Jul 2023)</span>
                     </div>
                     <div class="card-body">
-                        <p>Applied ML techniques to real-world datasets, performing feature engineering and model development for predictive analytics.</p>
-                        <a href="certificate-exposys.pdf" target="_blank">View Certificate</a>
+                        <p>Applied ML for predictive analytics with real-world datasets.</p>
+                        <a href="certificate-exposys.jpg" target="_blank">View Certificate</a>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-header">
                         <h3>Machine Learning Intern</h3>
-                        <span>TechVolt Software (May 2023 - Jul 2023)</span>
+                        <span>TechVolt Software (May 2023 - Jun 2023)</span>
                     </div>
                     <div class="card-body">
-                        <p>Deployed ML models using Streamlit, gaining expertise in data preprocessing, training, and interactive web apps.</p>
-                        <a href="certificate-techvolt.pdf" target="_blank">View Certificate</a>
+                        <p>Deployed ML models using Streamlit for interactive apps.</p>
+                        <a href="certificate-techvolt.jpg" target="_blank">View Certificate</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="certifications">
-          <h2>Certifications <span id="flip"><div><div>Train</div><div>Certify</div><div>Advance</div></div></span></h2>
+            <h2>Certifications <span class="flip"><div><div>Innovate</div><div>Engineer</div><div>Transform</div></div></span></h2>
             <div class="certificates">
                 <div class="cert-card">
                     <img src="certificate1.jpg" alt="Data Analytics Essentials" class="cert-image">
@@ -251,26 +240,26 @@
         </section>
 
         <section id="virtual-programs">
-            <h2>Virtual Programs <span id="flip"><div><div>Engage</div><div>Practice</div><div>Excel</div></div></span></h2>
+            <h2>Virtual Programs <span class="flip"><div><div>Innovate</div><div>Engineer</div><div>Transform</div></div></span></h2>
             <div class="program-list">
                 <div class="program">
                     <h3>Accenture: Navigating Numbers</h3>
-                    <p>Mastered data cleaning, modeling, and storytelling for business insights.</p>
+                    <p>Mastered data modeling and storytelling for insights.</p>
                 </div>
                 <div class="program">
                     <h3>PWC Switzerland: Power BI Projects</h3>
-                    <p>Analyzed call center trends and customer retention using Power BI.</p>
+                    <p>Analyzed trends using Power BI dashboards.</p>
                 </div>
                 <div class="program">
                     <h3>Tata: Data Visualization</h3>
-                    <p>Created impactful visualizations to communicate business insights.</p>
+                    <p>Created impactful business visualizations.</p>
                 </div>
             </div>
         </section>
 
         <section id="contact">
             <div class="contact-container">
-                <h2>Contact <span id="flip"><div><div>Connect</div><div>Engage</div><div>Collaborate</div></div></span></h2>
+                <h2>Contact <span class="flip"><div><div>Connect</div><div>Engage</div><div>Collaborate</div></div></span></h2>
                 <div class="letter-image">
                     <div class="animated-mail">
                         <div class="back-fold"></div>
@@ -303,7 +292,6 @@
         </footer>
     </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
