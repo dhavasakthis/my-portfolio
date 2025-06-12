@@ -1,52 +1,115 @@
-$(document).ready(function() {
+console.log('script.js loaded');
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded');
+
+    const landing = document.getElementById('landing');
+    const exploreButton = document.getElementById('explore-button');
+    const returnButton = document.getElementById('return-button');
+
+    if (exploreButton) {
+        console.log('Explore button found');
+        exploreButton.addEventListener('click', () => {
+            console.log('Explore Portfolio clicked!');
+            landing.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+    } else {
+        console.error('Explore button not found!');
+    }
+
+    if (returnButton) {
+        console.log('Return button found');
+        returnButton.addEventListener('click', () => {
+            console.log('Return to Home clicked!');
+            landing.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    } else {
+        console.error('Return button not found!');
+    }
+
     // Smooth scrolling for nav links
-    $('a[href^="#"]').on('click', function(e) {
-        e.preventDefault();
-        const target = $(this.hash);
-        $('html, body').animate({
-            scrollTop: target.offset().top
-        }, 500);
-    });
-
-    // Certificate enlargement with modal
-    $('.cert-image').on('click', function() {
-        const src = $(this).attr('src');
-        if ($(this).hasClass('enlarged')) {
-            $(this).removeClass('enlarged');
-            $('#modal-overlay').remove();
-        } else {
-            $('.cert-image').removeClass('enlarged');
-            $(this).html(`
-                <div id="modal-overlay">
-                    <img src="${src}" alt="Enlarged Certificate">
-                    <span class="modal-close">&times;</span>
-                </div>
-            `).appendTo('body');
-            $(this).addClass('enlarged');
-        }
-    });
-
-    // Close modal on click
-    $(document).on('click', '.modal-close, #modal-overlay', function() {
-        $('#modal-overlay').remove();
-        $('.cert-image').removeClass('enlarged');
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log(`Nav link clicked: ${link.getAttribute('href')}`);
+            const targetId = link.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                landing.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                console.error(`Target section #${targetId} not found!`);
+            }
+        });
     });
 
     // Project details toggle
     window.toggleDetails = function(element) {
-        const details = $(element).find('.project-details');
-        $('.project-details').not(details).slideUp('fast');
-        details.slideToggle('fast');
+        console.log('Toggling project details');
+        const details = element.querySelector('.project-details');
+        document.querySelectorAll('.project-details').forEach(d => {
+            if (d !== details) d.style.display = 'none';
+        });
+        details.style.display = details.style.display === 'block' ? 'none' : 'block';
     };
 
-    // Section animations on scroll
-    const sections = $('section');
-    $(window).on('scroll', function() {
-        sections.each(function() {
-            const top = $(this).offset().top - $(window).height() / 1.5;
-            if ($(window).scrollTop() > top) {
-                $(this).addClass('visible');
+    // Particle animation
+    const canvas = document.getElementById('particle-canvas');
+    if (canvas) {
+        console.log('Canvas found');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const colors = ['#00D4FF', '#FF2A6D', '#7B2CBF'];
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = Math.random() * 2 - 1;
+                this.speedY = Math.random() * 2 - 1;
+                this.color = colors[Math.floor(Math.random() * colors.length)];
             }
-        });
-    });
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = this.color;
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 30; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+
+        animateParticles();
+    } else {
+        console.error('Canvas not found!');
+    }
 });
